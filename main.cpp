@@ -4,6 +4,7 @@ OUTPUT:
 2 3 4
 */
 
+#include "queues.h"
 #include <iostream>
 #include <string>
 
@@ -30,12 +31,14 @@ int main()
 
     // Retrieve and print the front element of the queue.
     cout << myQueue.front();
+    cout << endl;
 
     // Remove the front element of the queue.
     myQueue.pop();
 
     // Retrieve and print the front and rear elements of the queue.
     cout << myQueue.front();
+    cout << endl;
     cout << myQueue.back();
     cout << endl;
 
@@ -56,6 +59,36 @@ int main()
         // We need to call function pop to remove the
         // element at the front of the queue.
         myQueue.pop();
+    }
+
+    cout << endl;
+
+    queue<int> myQueue2;
+    myQueue2.push(1);
+    myQueue2.push(2);
+    myQueue2.push(3);
+    myQueue2.push(4);
+    myQueue2.push(5);
+    myQueue2.push(6);
+    myQueue2.push(7);
+    myQueue2.push(8);
+    myQueue2.push(9);
+
+    stack<int> myStack2;
+
+//    while (!myQueue2.empty())
+//    {
+//        cout << myQueue2.front() << " ";
+//        myQueue2.pop();
+//    }
+
+    reverseQueue(myQueue2, myStack2);
+
+    cout << "myQueue2 reverse: \n";
+    while (!myQueue2.empty())
+    {
+        cout << myQueue2.front() << " ";
+        myQueue2.pop();
     }
 
     cout << endl;
